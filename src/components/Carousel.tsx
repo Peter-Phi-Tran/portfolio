@@ -24,7 +24,7 @@ const Carousel = () => {
     const options = {
       speed: 30,
       gap: 95,
-      curve: 2.5,
+      curve: 3.5,
       direction: -1
     };
 

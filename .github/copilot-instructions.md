@@ -2,21 +2,20 @@
 # React Portfolio Project - Copilot Instructions
 
 ## Project Overview
-This is a modern React portfolio website built with TypeScript, Vite, GSAP animations, and Lenis smooth scrolling. The design is inspired by OVA Investment's sophisticated minimalist aesthetic featuring clean typography, spaced lettering, and elegant interactions.
+This is a modern React portfolio website built with TypeScript, Vite, and Three.js 3D graphics. The design features a sophisticated 3D carousel with curved panels and smooth mouse interactions.
 
 ## Tech Stack
 - **Frontend**: React 19.1.1 + TypeScript
 - **Build Tool**: Vite with Rolldown
-- **Animations**: GSAP with ScrollTrigger
-- **Smooth Scroll**: Lenis
-- **Styling**: CSS with Custom Properties
-- **Fonts**: Inter + JetBrains Mono
+- **3D Graphics**: Three.js with WebGL and custom shaders
+- **Styling**: Tailwind CSS + Custom CSS
+- **Fonts**: Inter + Work Sans + JetBrains Mono + Geist Mono
 
 ## Key Features
+- 3D curved carousel using Three.js with custom GLSL shaders
 - Matrix text scrambling animation on buttons
 - Translucent glassmorphism header with backdrop blur
-- OVA-inspired spaced typography (letter-spacing: 0.2em)
-- Smooth GSAP animations with proper cleanup
+- Mouse Y-axis tilt control for carousel
 - Responsive design with mobile-first approach
 - Clean minimal color palette (whites, blacks, subtle grays)
 
@@ -27,14 +26,14 @@ This is a modern React portfolio website built with TypeScript, Vite, GSAP anima
 - `npm run lint` - Lint code
 
 ## Component Architecture
-- **Header**: Fixed translucent navigation
-- **Hero**: Large spaced typography with floating elements
-- **MatrixButton**: Custom text scrambling effect
-- **About/Projects/Contact**: Content sections with scroll animations
+- **Header**: Fixed translucent navigation with matrix buttons
+- **Hero**: Main section with title, carousel, and description
+- **Carousel**: Three.js WebGL canvas with curved 3D panels
+- **Matrix Effect**: Custom text scrambling animation on hover
 
 ## Design Principles
-- Minimalist aesthetic inspired by OVA Investment
+- Minimalist aesthetic with clean typography
 - High contrast typography (black on white)
-- Subtle borders and spacing for elegance
+- Subtle glassmorphism effects with backdrop blur
 - Monospace fonts for technical elements
-- Smooth animations that enhance UX
+- Smooth 3D animations with proper GPU acceleration

@@ -9,15 +9,8 @@ export default {
       fontFamily: {
         'inter': ['Inter', 'system-ui', 'sans-serif'],
         'mono': ['JetBrains Mono', 'Geist Mono', 'monospace'],
+        'work': ['Work Sans', 'system-ui', 'sans-serif'],
       },
-      colors: {
-        'text-primary': '#1a1a1a',
-        'text-secondary': '#6b7280',
-        'text-muted': '#9ca3af',
-      },
-      letterSpacing: {
-        'extra-wide': '0.2em',
-      }
     },
   },
   plugins: [],
