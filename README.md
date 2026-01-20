@@ -1,34 +1,21 @@
-# portfolio
+# bun-react-tailwind-astro
 
-Personal portfolio site built with React + Vite.
-
-## Prerequisites
-
-- Bun installed (recommended) or Node.js
-
-## Getting started
-
-Install dependencies:
+To install dependencies:
 
 ```bash
 bun install
 ```
 
-Run the dev server:
+To start a development server:
 
 ```bash
-bun run dev
+bun dev
 ```
 
-## Build
+To run for production:
 
 ```bash
-bun run build
-bun run preview
+bun start
 ```
 
-## Lint
-
-```bash
-bun run lint
-```
+This project was created using `bun init` in bun v1.3.6. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
