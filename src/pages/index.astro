@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactIcons from "../components/ContactIcons.astro";
+import ProfilePicture from "../components/ProfilePicture.astro";
+---
+
+<BaseLayout>
+     <main class="mx-auto max-w-screen-xl md:px-16 lg:px-24">
+          <div
+            class="flex items-start justify-between gap-8 sm:flex-row md:items-center lg:gap-32"
+        >
+            <!-- Left side (name and links) -->
+            <div class="flex-initial">
+                <div class="drop-shadow-lg">
+                    <div class="text-xl font-bold">Hi, I'm</div>
+                    <h1 class="mb-4 text-8xl font-black">
+                        <div
+                            class="inline-block size-20 translate-y-1.5 align-baseline sm:hidden"
+                        >
+                            <ProfilePicture border="thin" />
+                        </div>
+                        Peter Tran.
+                    </h1>
+                    <div class="text-purdue text-3xl font-bold">
+                        CS @ UT Arlington
+                    </div>
+                </div>
+                <div class="flex flex-row justify-between drop-shadow-sm">
+                    <ContactIcons />
+                </div>
+            </div>
+
+            <!-- Right: pfp -->
+            <div
+                class="box-content hidden size-40 pt-16 sm:block md:size-56 md:pt-0"
+            >
+                <ProfilePicture />  
+            </div>  
+        </div>
+     </main>
+</BaseLayout>
