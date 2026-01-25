@@ -2,40 +2,37 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactIcons from "../components/ContactIcons.astro";
 import ProfilePicture from "../components/ProfilePicture.astro";
+import PageSEO from "../components/PageSEO.astro";
+
+const headingStyle = 
+    "decoration-accent mb-4 text-3xl font-black underline tracking-tight";
 ---
 
 <BaseLayout>
-     <main class="mx-auto max-w-screen-xl md:px-16 lg:px-24">
-          <div
-            class="flex items-start justify-between gap-8 sm:flex-row md:items-center lg:gap-32"
-        >
-            <!-- Left side (name and links) -->
-            <div class="flex-initial">
-                <div class="drop-shadow-lg">
-                    <div class="text-xl font-bold">Hi, I'm</div>
-                    <h1 class="mb-4 text-8xl font-black">
-                        <div
-                            class="inline-block size-20 translate-y-1.5 align-baseline sm:hidden"
-                        >
-                            <ProfilePicture border="thin" />
-                        </div>
-                        Peter Tran.
-                    </h1>
-                    <div class="text-purdue text-3xl font-bold">
-                        CS @ UT Arlington
+     <PageSEO slot="head" title="Peter Tran" />
+
+     <main class="mx-auto max-w-screen-2xl sm:px-8 md:px-16">
+
+            <div class="mt-12 mb-0 lg:flex lg:flex-row lg:justify-around lg:gap-24">
+                <div class="flex-initial">
+
+                    <div class="font-serif flex flex-row items-center justify-around gap-4 sm:gap-8 md:gap-16 lg:justify-start">
+                        <div>
+                            <div class="text-xl font-bold">Hey, I'm</div>
+                            <div class="mt-2 text-6xl drop-shadow-md font-black tracking-tight sm:text-8xl"
+                                >
+                                Peter Tran<span class="text-accent">.</span>
+                            <div class="mt-4 not-only-of-type:flex flex-row justify-between drop-shadow-sm">
+                                <ContactIcons />
+                            </div>
+                        </div> 
+                    </div>
+            <!-- Right: pfp -->
+                    <div class="box-content size-30 sm:size-40 md:size-56 lg:size-auto lg:max-w-56 lg:min-w-30">
+                        <ProfilePicture />  
                     </div>
                 </div>
-                <div class="flex flex-row justify-between drop-shadow-sm">
-                    <ContactIcons />
-                </div>
             </div>
-
-            <!-- Right: pfp -->
-            <div
-                class="box-content hidden size-40 pt-16 sm:block md:size-56 md:pt-0"
-            >
-                <ProfilePicture />  
-            </div>  
         </div>
      </main>
 </BaseLayout>
