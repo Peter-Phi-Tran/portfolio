@@ -5,3 +5,8 @@
     --font-serif: Georgia;
 }
 
+@layer base {
+    body {
+        @apply bg-violet-50 text-stone-900;
+    }
+}

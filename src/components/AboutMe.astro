@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+    headingStyle: string;
+}
+
+const { headingStyle } = Astro.props;
+---
+
+<section class="font-sans w-full text-2xl md:w-fit md:ml-auto lg:mt-0">
+
+  <div class="grid grid-cols-[1fr_auto] gap-x-6 gap-y-6 leading-[1.15]">
+    <div class="font-bold">
+      CS <span class="font-sans">@</span> UT Arlington
+    </div>
+    <div class="text-secondary text-right text-base font-medium whitespace-nowrap">
+      2023&ndash;2027
+    </div>
+
+    <div class="font-bold">
+      SDE Intern <span class="font-sans">@</span> Beautisol
+    </div>
+    <div class="text-secondary text-right text-base font-medium whitespace-nowrap">
+      Present
+    </div>
+
+    <div class="font-bold col-span-2">
+      Side quest enthusiast
+    </div>
+  </div>
+</section>

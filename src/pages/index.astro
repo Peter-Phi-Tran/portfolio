@@ -3,9 +3,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactIcons from "../components/ContactIcons.astro";
 import ProfilePicture from "../components/ProfilePicture.astro";
 import PageSEO from "../components/PageSEO.astro";
+import AboutMe from "../components/AboutMe.astro";
 
 const headingStyle = 
-    "decoration-accent mb-4 text-3xl font-black underline tracking-tight";
+    "decoration-accent mb-4 text-3xl font-black underline";
 ---
 
 <BaseLayout>
@@ -13,26 +14,28 @@ const headingStyle =
 
      <main class="mx-auto max-w-screen-2xl sm:px-8 md:px-16">
 
-            <div class="mt-12 mb-0 lg:flex lg:flex-row lg:justify-around lg:gap-24">
+            <div class="mt-12 mb-2 lg:flex lg:flex-row lg:gap-24 xl:gap-8 lg:items-center">
                 <div class="flex-initial">
 
-                    <div class="font-serif flex flex-row items-center justify-around gap-4 sm:gap-8 md:gap-16 lg:justify-start">
+                    <div class="font-sans flex flex-row items-center justify-start gap-4 sm:gap-8 md:gap-16 lg:justify-start">
                         <div>
-                            <div class="text-xl font-bold">Hey, I'm</div>
-                            <div class="mt-2 text-6xl drop-shadow-md font-black tracking-tight sm:text-8xl"
+                            <div class="text-xl">Hey, I'm</div>
+                            <div class="mt-2 text-6xl drop-shadow-md font-semibold tracking-tight sm:text-8xl"
                                 >
                                 Peter Tran<span class="text-accent">.</span>
-                            <div class="mt-4 not-only-of-type:flex flex-row justify-between drop-shadow-sm">
+                        </div> 
+                            <div class="mt-6 not-only-of-type:flex flex-row justify-between drop-shadow-sm">
                                 <ContactIcons />
                             </div>
-                        </div> 
-                    </div>
+                        </div>
             <!-- Right: pfp -->
-                    <div class="box-content size-30 sm:size-40 md:size-56 lg:size-auto lg:max-w-56 lg:min-w-30">
+                    <div class="box-content flex size-30 sm:size-40 md:size-56 lg:size-auto lg:max-w-56 lg:min-w-30">
                         <ProfilePicture />  
                     </div>
                 </div>
+                <div class="mt-8"></div>
             </div>
+            <AboutMe {headingStyle} />
         </div>
      </main>
 </BaseLayout>
