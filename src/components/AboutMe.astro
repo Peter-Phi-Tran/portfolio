@@ -8,24 +8,24 @@ export interface Props {
 const { headingStyle } = Astro.props;
 ---
 
-<section class="font-sans w-full text-2xl md:w-fit md:ml-auto lg:mt-0">
+<section class="w-full text-2xl md:w-fit md:ml-auto lg:mt-0 p-8">
 
   <div class="grid grid-cols-[1fr_auto] gap-x-6 gap-y-6 leading-[1.15]">
-    <div class="font-bold">
-      CS <span class="font-sans">@</span> UT Arlington
+    <div class="font-medium font-default-sans">
+      CS <span>@</span> UT Arlington
     </div>
-    <div class="text-secondary text-right text-base font-medium whitespace-nowrap">
+    <div class="text-secondary text-right text-base whitespace-nowrap">
       2023&ndash;2027
     </div>
 
-    <div class="font-bold">
-      SDE Intern <span class="font-sans">@</span> Beautisol
+    <div class="font-medium">
+      SDE Intern <span>@</span> Beautisol
     </div>
-    <div class="text-secondary text-right text-base font-medium whitespace-nowrap">
+    <div class="text-secondary text-right text-base whitespace-nowrap">
       Present
     </div>
 
-    <div class="font-bold col-span-2">
+    <div class="font-medium col-span-2">
       Side quest enthusiast
     </div>
   </div>

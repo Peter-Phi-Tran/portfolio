@@ -1,20 +1,9 @@
 ---
 import { Image } from "astro:assets";
-
-const borderClasses = {
-    thin: "border-2",
-    thick: "border-8",
-};
-
-export interface Props {
-    border?: keyof typeof borderClasses;
-}
-
-const border = borderClasses[Astro.props.border ?? "thick"];
 ---
 
 <div
-    class={`aspect-square size-full flex-none overflow-hidden rounded-full ${border} border-accent shadow-lg`}
+    class={`aspect-square size-full flex-none overflow-hidden rounded-full border-accent shadow-[0_20px_50px_rgba(0,0,0,0.5)]`}
 >
     <!-- Place holder for pfp -->
     <Image

@@ -12,15 +12,15 @@ const headingStyle =
 <BaseLayout>
      <PageSEO slot="head" title="Peter Tran" />
 
-     <main class="mx-auto max-w-screen-2xl sm:px-8 md:px-16">
+     <main class="mx-auto max-w-screen-2xl">
 
             <div class="mt-12 mb-2 lg:flex lg:flex-row lg:gap-24 xl:gap-8 lg:items-center">
                 <div class="flex-initial">
 
-                    <div class="font-sans flex flex-row items-center justify-start gap-4 sm:gap-8 md:gap-16 lg:justify-start">
+                    <div class="p-8 font-sans flex flex-row items-center justify-start gap-4 sm:gap-8 md:gap-16 lg:justify-start">
                         <div>
                             <div class="text-xl">Hey, I'm</div>
-                            <div class="mt-2 text-6xl drop-shadow-md font-semibold tracking-tight sm:text-8xl"
+                            <div class="mt-2 xl:mr-8 2xl:mr-8 text-6xl drop-shadow-md font-semibold tracking-tight sm:text-8xl"
                                 >
                                 Peter Tran<span class="text-accent">.</span>
                         </div> 
@@ -38,4 +38,10 @@ const headingStyle =
             <AboutMe {headingStyle} />
         </div>
      </main>
+    <section class="bg-neutral-100 dark:bg-neutral-900 py-16 sm:py-24">
+        <div class="mx-auto max-w-screen-2xl sm:px-8 md:px-16">
+            <h2 class={headingStyle}>Projects</h2>
+            <!-- Your section content here -->
+        </div>
+    </section>
 </BaseLayout>

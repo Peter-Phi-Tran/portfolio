@@ -1,12 +1,28 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
-    --color-tan: #EBE9E5;
-    --font-serif: Georgia;
-}
+    --color-color: #8e6f3e;
+    --color-accent: color-mix(
+        in oklab,
+        var(--color-sky-200) 70%,
+        transparent
+    );
+    --color-primary: var(--color-slate-900);
+    --color-secondary: var(--color-slate-400);
+    --color-background: var(--color-slate-100);
+    --color-error: color-mix(
+        in oklab,
+        var(--color-red-700) 80%,
+        var(--color-background)
+    );
 
-@layer base {
-    body {
-        @apply bg-violet-50 text-stone-900;
-    }
+    --font-default-sans:
+        ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: "Raleway Variable", var(--font-default-sans);
+
+    /* Like inset-shadow-sm but even on the top and bottom. */
+    --inset-shadow-sm-even-tb: inset 0 0 4px 2px
+        var(--tw-inset-shadow-color, rgb(0 0 0 / 0.05));
 }
