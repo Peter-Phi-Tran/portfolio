@@ -1,0 +1,100 @@
+---
+import { Image } from "astro:assets";
+
+import jpmcLogo from "@/content/jpmc.png";
+import beautisolLogo from "@/content/beautisol.png";
+import misdLogo from "@/content/misd.png";
+
+export interface Experience {
+    logo: ImageMetadata,
+    company: string,
+    role: string,
+    duration: string,
+    description: string[],
+    technologies?: string[],    
+    link?: string,
+}
+
+const experiences: Experience[] = [
+    {
+        logo: jpmcLogo,
+        company: "JP Morgan Chase",
+        role: "Incoming Software Engineer Intern",
+        duration: "Summer 2026",
+        description: [
+            "Apart of the SEP Program"
+        ],
+    },
+    {
+        logo: beautisolLogo,
+        company: "Beautisol",
+        role: "Software Development Intern",
+        duration: "Present",
+        description: [
+            "Building out a customer-facing application showcasing products, enabling SMS purchasing, and supporting future training and machine dashboards",
+            "Engineered Azure IoT Hub OTA pipeline with device provisioning and device key derivation"
+        ],
+        technologies: ["Azure, C++, Espressif, React, .NET, Docker"],
+    },
+    {
+        logo: misdLogo,
+        company: "MISD Technology",
+        role: "IT Intern",
+        duration: "Sept 2022 - May 2023",
+        description: [
+            "Managing district-wide hardware inventory, repairs, and IT support tasks."
+        ],
+        technologies: ["SQL, Spreadsheets"],
+    }
+
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    {experiences.map((exp) => (
+        <article class="group relative rounded-lg border border-secondary bg-background p-6 shadow-sm transition-all duration-300 hover:shadow-lg">
+            <!-- Header -->
+            <div class="border-secondary flex flex-row items-center gap-2">
+                <Image 
+                    src={exp.logo} 
+                    alt={`${exp.company} logo`}
+                    width={35}
+                    height={35}
+                    densities={[1.5, 2]}
+                    quality={100}
+                    format="png"
+                    class="rounded"
+                />
+                <div class="flex-1">
+                    <h3 class="pl-2 text-xl font-semibold">
+                        {exp.company}
+                    </h3>
+                </div>
+            </div>
+            <div class="text-sm whitespace-nowrap">
+                <p class="mt-1 text-base font-medium">{exp.role}</p>
+                {exp.duration}
+            </div>
+            <!-- Description -->
+            <ul class="mt-4 space-y-2 ">
+                {exp.description.map((item) => (
+                    <li class="flex gap-2">
+                        <span class="text-accent mt-1.5 text-xs">▸</span>
+                        <span class="flex-1">{item}</span>
+                    </li>
+                ))}
+            </ul>
+            
+            <!-- Technologies -->
+            {exp.technologies && exp.technologies.length > 0 && (
+                <div class="mt-4 flex flex-wrap gap-2">
+                    {exp.technologies.map((tech) => (
+                        <span class="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium">
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+            )}
+        </article>
+    ))}
+</div>
