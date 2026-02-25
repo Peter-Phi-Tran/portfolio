@@ -1,0 +1,20 @@
+---
+import ProjectsCard from './ProjectsCard.astro';
+
+export interface Props {
+    headingStyle: string;
+}
+
+const { headingStyle } = Astro.props
+---
+
+<section class=" bg-neutral-100 dark:bg-neutral-900">
+    <div class="p-8 mx-auto max-w-screen-2xl sm:px-8 md:px-16">
+        <h2 class={headingStyle}>Projects</h2>
+        
+        <!-- Divider with shadow -->
+        <div class="mt-2 mb-8 h-px from-transparent via-secondary shadow-md"></div>
+        
+        <ProjectsCard/>
+    </div>
+</section>

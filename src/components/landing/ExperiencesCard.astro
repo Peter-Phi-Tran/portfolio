@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
 
-import jpmcLogo from "@/content/jpmc.png";
-import beautisolLogo from "@/content/beautisol.png";
-import misdLogo from "@/content/misd.png";
+import jpmcLogo from "@/content/experiences/jpmc.png";
+import beautisolLogo from "@/content/experiences/beautisol.png";
+import misdLogo from "@/content/experiences/misd.png";
 
-export interface Experience {
+interface Experience {
     logo: ImageMetadata,
     company: string,
     role: string,
@@ -72,7 +72,7 @@ const experiences: Experience[] = [
                 </div>
             </div>
             <div class="text-sm whitespace-nowrap">
-                <p class="mt-1 text-base font-medium">{exp.role}</p>
+                <p class="mt-2 text-base font-medium">{exp.role}</p>
                 {exp.duration}
             </div>
             <!-- Description -->

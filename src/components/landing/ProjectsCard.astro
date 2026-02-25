@@ -1,0 +1,75 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+import mavbash from "@/content/projects/mavbash.png";
+
+interface Project {
+    title: string,
+    tagline: string,
+    image: ImageMetadata,
+    caption: string,
+    description: string[],
+    github?: string,
+    link?: string,
+    documentation?: string,
+    tech_stack: string[]
+}
+
+const projects: Project[] = [
+    {
+        title: "Mav Shell",
+        tagline: "Basic shell project to learn basics and fundamentals",
+        image: mavbash,
+        caption: "Screenshot of some of the test commands in the shell.",
+        description: [
+            "A simple Unix shell implementation written in C, built to deepen understanding of operating systems and programming fundamentals.",
+        ],
+        tech_stack: ["C"]
+    }
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.map((proj) => (
+        <article class="rounded-lg border border-secondary bg-white p-5 shadow-sm">
+            <h3 class="text-lg font-bold">{proj.title}</h3>
+            <p class="mt-0.5 text-sm text-secondary">{proj.tagline}</p>
+
+            {(proj.link || proj.documentation || proj.github) && (
+                <div class="mt-1.5 flex items-center gap-2 text-secondary">
+                    {proj.link && (
+                        <a href={proj.link} target="_blank" rel="noopener noreferrer" title="Visit project" class="hover:opacity-80 transition-opacity">
+                            <Icon name="fa7-solid:link" class="size-4" />
+                        </a>
+                    )}
+                    {proj.documentation && (
+                        <a href={proj.documentation} target="_blank" rel="noopener noreferrer" title="Documentation" class="hover:opacity-80 transition-opacity">
+                            <Icon name="fa7-solid:file-lines" class="size-4" />
+                        </a>
+                    )}
+                    {proj.github && (
+                        <a href={proj.github} target="_blank" rel="noopener noreferrer" title="GitHub" class="hover:opacity-80 transition-opacity">
+                            <Icon name="devicon:github" class="size-4" />
+                        </a>
+                    )}
+                </div>
+            )}
+
+            <div class="mt-3 rounded border-transparent p-2">
+                <Image src={proj.image} alt={proj.caption} class="w-full rounded shadow-md object-contain" quality={80} />
+            </div>
+            <p class="mt-1 text-center text-[11px] italic text-secondary">{proj.caption}</p>
+
+            <p class="mt-2 text-sm leading-relaxed">{proj.description.join(" ")}</p>
+
+            {proj.tech_stack.length > 0 && (
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                    {proj.tech_stack.map((tech) => (
+                        <span class="rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium">{tech}</span>
+                    ))}
+                </div>
+            )}
+        </article>
+    ))}
+</div>
