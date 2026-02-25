@@ -119,9 +119,9 @@ const projects: Project[] = [
 
 ---
 
-<div class="grid grid-cols-1 gap-10 sm:flex sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:pb-3 sm:-mb-3">
+<div class="p-8 grid grid-cols-1 gap-8 sm:flex sm:overflow-x-auto">
     {projects.reverse().map((proj) => (
-        <article class="snap-start w-full sm:shrink-0 sm:w-[55vw] lg:w-[38vw] xl:w-[32vw] sm:h-[580px] rounded-lg border border-secondary bg-white shadow-sm overflow-hidden">
+        <article class="w-full sm:shrink-0 sm:w-[55vw] lg:w-[38vw] xl:w-[32vw] sm:h-145 rounded-lg border border-secondary bg-white shadow-sm overflow-hidden">
             <div class="p-6 h-full sm:overflow-y-auto">
                 <h3 class="text-2xl font-bold">{proj.title}</h3>
                 <p class="mt-1 text-lg text-secondary">{proj.tagline}</p>
