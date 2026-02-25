@@ -119,10 +119,10 @@ const projects: Project[] = [
 
 ---
 
-<div class="grid grid-cols-1 gap-6 sm:flex sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:pb-3 sm:-mb-3">
+<div class="grid grid-cols-1 gap-10 sm:flex sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:pb-3 sm:-mb-3">
     {projects.reverse().map((proj) => (
-        <article class="snap-start w-full sm:shrink-0 sm:w-[55vw] lg:w-[38vw] xl:w-[32vw] sm:h-[580px] sm:overflow-y-auto rounded-lg border border-secondary bg-white p-6 shadow-sm">
-            <div>
+        <article class="snap-start w-full sm:shrink-0 sm:w-[55vw] lg:w-[38vw] xl:w-[32vw] sm:h-[580px] rounded-lg border border-secondary bg-white shadow-sm overflow-hidden">
+            <div class="p-6 h-full sm:overflow-y-auto">
                 <h3 class="text-2xl font-bold">{proj.title}</h3>
                 <p class="mt-1 text-lg text-secondary">{proj.tagline}</p>
 
@@ -140,21 +140,21 @@ const projects: Project[] = [
                         )}
                     </div>
                 )}
-            </div>
 
-            <div class="mt-3 rounded shadow-sm">
-                <Image src={proj.image} alt={proj.caption} class="w-full rounded object-contain" quality={80} />
-            </div>
-            <p class="mt-1 text-center text-sm italic text-secondary">{proj.caption}</p>
-            <p class="mt-3 text-base leading-relaxed">{proj.description.join(" ")}</p>
-
-            {proj.tech_stack.length > 0 && (
-                <div class="mt-3 flex flex-wrap gap-1.5">
-                    {proj.tech_stack.map((tech) => (
-                        <span class="rounded-full bg-cellbg text-celltext px-3 py-1 text-sm font-medium">{tech}</span>
-                    ))}
+                <div class="mt-3 rounded shadow-sm">
+                    <Image src={proj.image} alt={proj.caption} class="w-full rounded object-contain" quality={80} />
                 </div>
-            )}
+                <p class="mt-1 text-center text-sm italic text-secondary">{proj.caption}</p>
+                <p class="mt-3 text-base leading-relaxed">{proj.description.join(" ")}</p>
+
+                {proj.tech_stack.length > 0 && (
+                    <div class="mt-3 flex flex-wrap gap-1.5">
+                        {proj.tech_stack.map((tech) => (
+                            <span class="rounded-full bg-cellbg text-celltext px-3 py-1 text-sm font-medium">{tech}</span>
+                        ))}
+                    </div>
+                )}
+            </div>
         </article>
     ))}
 </div>
