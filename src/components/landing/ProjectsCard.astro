@@ -1,8 +1,15 @@
 ---
-import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components"
+import { Image } from "astro:assets"
 
-import mavbash from "@/content/projects/mavbash.png";
+import mavbash from "@/content/projects/mavbash.png"
+import sasegauge from "@/content/projects/sasegauge.png"
+import hydratealert from "@/content/projects/hydratealert.png"
+import sasejt from "@/content/projects/sasejt.png"
+import stratify from "@/content/projects/stratify.png"
+import plantpal from "@/content/projects/plantpal.png"
+import tachyon from "@/content/projects/tachyon.png"
+import serapis from "@/content/projects/serapismd.png"
 
 interface Project {
     title: string,
@@ -12,7 +19,6 @@ interface Project {
     description: string[],
     github?: string,
     link?: string,
-    documentation?: string,
     tech_stack: string[]
 }
 
@@ -23,50 +29,129 @@ const projects: Project[] = [
         image: mavbash,
         caption: "Screenshot of some of the test commands in the shell.",
         description: [
-            "A simple Unix shell implementation written in C, built to deepen understanding of operating systems and programming fundamentals.",
+            "A simple Unix shell implementation written in C, built to deepen understanding of operating systems and programming fundamentals."
         ],
         tech_stack: ["C"]
+    },
+    {
+        title: "SASE-Gauge",
+        tagline: "Personal ratings app similar to Yelp/Beli",
+        image: sasegauge,
+        caption: "Screenshot of the home landing page showing entries and stats",
+        description: [
+            "Built apart of SASE RIG (Research Interest Group) alongside 9 other teammates to deliver a web app capable of rating all things."
+        ],
+        tech_stack: ["HTML", "CSS", "JavaScript", "Flask", "SQLAlchemy"]
+    },
+    {
+        title: "Hydrate Alert",
+        tagline: "Data prediction & analysis platform for hydrate formation in gas pipelines",
+        image: hydratealert,
+        caption: "Metrics and data visualization showing the relation between Valve vs Volume for a dataset",
+        description: [
+            "This application includes features such as Google Auth, and the implementation of a Random Forest Regressor Machine Learning Model to process",
+            " the data and its features. Data is provided as CSV files and is normalized using pandas and numpy, graphs displayed with matplotlib & streamlit."
+        ],
+        github: "https://github.com/Peter-Phi-Tran/Hydrate-Alert",
+        tech_stack: ["Streamlit", "scikit-learn", "pandas", "SQLite", "Matplotlib", "OAuth"]
+    },
+    {
+        title: "SASE Job Tracker",
+        tagline: "Discord bot that would alert and send out internship and newgrad opportunities",
+        image: sasejt,
+        caption: "Screenshot of the channel and job posting example",
+        description: [
+            "Made this project in hopes of helping the engineering majors apart of SASE find more opportunities especially those in fields outside of CS and Software.",
+            " The project takes postings from github repos, Simplify, and Jobright."
+        ],
+        tech_stack: ["Discord API", "Docker", "MongoDB", "Python"]
+    },
+    {
+        title: "Stratify",
+        tagline: "Real-time market stock trading simulator app",
+        image: stratify,
+        caption: "User dashboard of trading metrics and portfolios",
+        description: [
+            "Goal of this project was to get a deeper understanding and experience using JavaScript & MERN stack and things such as JWT auth, rate limiting, etc.",
+            "Full stack web application with user portal and the ability to trade and retrieve live market data using Finnhub Websockets."
+        ],
+        link: "https://stratify-glte.onrender.com/",
+        tech_stack: ["MongoDB", "Express", "React", "Node.js", "Render"]
+    },
+    {
+        title: "Plant-Pal",
+        tagline: "IoT plant monitoring system leveraging gpt-oss-20b",
+        image: plantpal,
+        caption: "Image of the ESP32 & sensors connected to the plant",
+        description: [
+            "Built for OpenAI's Open Model Hackathon, we were inspired for this project tying the nostalgia of Tamagotchis to modern day AI. The project takes sensor data such as soil moisture and humidity,",
+            " which is then processed by the model hosted on modal which after processed updates the Tamagotchi on the users device and sends a notification via discord."
+        ],
+        github: "https://github.com/Peter-Phi-Tran/Plant-Pal",
+        link: "https://devpost.com/software/ai-caramba",
+        tech_stack: ["C++", "FastAPI", "gpt-oss-20b", "PyTorch", "Modal"]
+    },
+    {
+        title: "Tachyon",
+        tagline: "Personalized vehicle financing through an AI interview platform",
+        image: tachyon,
+        caption: "Screenshot of the appliction, inspired by the theme of the hackathon and knowledge graphs",
+        description: [
+            "Tachyon is an interactive car financing assistant built during hackTX, that takes in a users input information into a personalized 3D constellation of financing options.",
+            "It utilizes a 3-agent orchestration system with Gemini ADK to create a conversational interview to make complex loan and lease trade‑offs visual, intuitive, and fun to explore."
+        ],
+        link: "https://devpost.com/software/tachyon-ruiz5h",
+        tech_stack: ["TypeScript", "FastAPI", "Gemini ADK", "Three.js", "SQLite"]
+    },
+    {
+        title: "Serapis",
+        tagline: "Modular patient management backend system",
+        image: serapis,
+        caption: "Mermaid diagram high-level view of all services, their ports, databases, and the AWS infrastructure they run on",
+        description: [
+            "This project consists of services such as auth, analytics, api gateway, and communication including REST, gRPC, and Kafka deployed in Docker containers for each service.",
+            "The infrastructure is managed with AWS CDK and is simulated being ran on localStack for services such as ECS, RDS, etc.",
+            " Aim of this project was to learn more about SpringBoot and apply practices such as dependency injection, OOP, DTOs, MVC Architecture."
+        ],
+        tech_stack: ["SpringBoot", "Kafka", "AWS", "PostgreSQL", "Docker", "gRPC"]
     }
 ];
+
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {projects.map((proj) => (
-        <article class="rounded-lg border border-secondary bg-white p-5 shadow-sm">
-            <h3 class="text-lg font-bold">{proj.title}</h3>
-            <p class="mt-0.5 text-sm text-secondary">{proj.tagline}</p>
+<div class="grid grid-cols-1 gap-6 sm:flex sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:pb-3 sm:-mb-3">
+    {projects.reverse().map((proj) => (
+        <article class="snap-start w-full sm:shrink-0 sm:w-[55vw] lg:w-[38vw] xl:w-[32vw] sm:h-[580px] sm:overflow-y-auto rounded-lg border border-secondary bg-white p-6 shadow-sm">
+            <div>
+                <h3 class="text-2xl font-bold">{proj.title}</h3>
+                <p class="mt-1 text-lg text-secondary">{proj.tagline}</p>
 
-            {(proj.link || proj.documentation || proj.github) && (
-                <div class="mt-1.5 flex items-center gap-2 text-secondary">
-                    {proj.link && (
-                        <a href={proj.link} target="_blank" rel="noopener noreferrer" title="Visit project" class="hover:opacity-80 transition-opacity">
-                            <Icon name="fa7-solid:link" class="size-4" />
-                        </a>
-                    )}
-                    {proj.documentation && (
-                        <a href={proj.documentation} target="_blank" rel="noopener noreferrer" title="Documentation" class="hover:opacity-80 transition-opacity">
-                            <Icon name="fa7-solid:file-lines" class="size-4" />
-                        </a>
-                    )}
-                    {proj.github && (
-                        <a href={proj.github} target="_blank" rel="noopener noreferrer" title="GitHub" class="hover:opacity-80 transition-opacity">
-                            <Icon name="devicon:github" class="size-4" />
-                        </a>
-                    )}
-                </div>
-            )}
-
-            <div class="mt-3 rounded border-transparent p-2">
-                <Image src={proj.image} alt={proj.caption} class="w-full rounded shadow-md object-contain" quality={80} />
+                {(proj.link || proj.github) && (
+                    <div class="mt-2 flex items-center gap-2 text-secondary">
+                        {proj.link && (
+                            <a href={proj.link} target="_blank" rel="noopener noreferrer" title="Visit project" class="hover:opacity-80 transition-opacity">
+                                <Icon name="fa7-solid:link" class="size-6" />
+                            </a>
+                        )}
+                        {proj.github && (
+                            <a href={proj.github} target="_blank" rel="noopener noreferrer" title="GitHub" class="hover:opacity-80 transition-opacity">
+                                <Icon name="devicon:github" class="size-6" />
+                            </a>
+                        )}
+                    </div>
+                )}
             </div>
-            <p class="mt-1 text-center text-[11px] italic text-secondary">{proj.caption}</p>
 
-            <p class="mt-2 text-sm leading-relaxed">{proj.description.join(" ")}</p>
+            <div class="mt-3 rounded shadow-sm">
+                <Image src={proj.image} alt={proj.caption} class="w-full rounded object-contain" quality={80} />
+            </div>
+            <p class="mt-1 text-center text-sm italic text-secondary">{proj.caption}</p>
+            <p class="mt-3 text-base leading-relaxed">{proj.description.join(" ")}</p>
 
             {proj.tech_stack.length > 0 && (
                 <div class="mt-3 flex flex-wrap gap-1.5">
                     {proj.tech_stack.map((tech) => (
-                        <span class="rounded-full bg-accent px-2.5 py-0.5 text-xs font-medium">{tech}</span>
+                        <span class="rounded-full bg-cellbg text-celltext px-3 py-1 text-sm font-medium">{tech}</span>
                     ))}
                 </div>
             )}

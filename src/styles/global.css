@@ -16,6 +16,8 @@
         var(--color-red-700) 80%,
         var(--color-background)
     );
+    --color-celltext: #6B6B6B;
+    --color-cellbg: #F5F5F5;
 
     --font-default-sans:
         ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
