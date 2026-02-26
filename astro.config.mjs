@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://Peter-Phi-Tran.github.io",
-  base: "/website",
+  base: "/",
   integrations: [icon()],
 
   vite: {

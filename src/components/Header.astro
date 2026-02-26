@@ -39,10 +39,10 @@ const navItems: NavItem[] = [
         class="font-sans mx-auto box-content flex h-4 max-w-screen-xl flex-row items-center justify-between p-4"
     >
         <!-- left side of the header -->
-        <a href="/" class="font-bold"> peter-phi.com </a>
+        <a href="/" class="font-bold"> Welcome! 👋 </a>
 
         <!-- right side of the header -->
-        <nav class="text-sm text-gray-700">
+        <nav class="text-sm text-gray-700 font-bold">
             <menu class="flex flex-row gap-4 max-sm:hidden">
                 {
                     navItems.map(({ path, name }) => (
@@ -60,7 +60,7 @@ const navItems: NavItem[] = [
                 id="hamburger"
                 class="peer group hidden max-sm:block relative"
             >
-                <summary class="inline cursor-pointer">
+                <summary class="inline cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                     <Icon
                         name="fa7-solid:bars"
                         class="inline group-open:hidden"
