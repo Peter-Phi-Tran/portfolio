@@ -1,0 +1,23 @@
+---
+import VolunteerCard from './VolunteerCard.astro'
+
+export interface Props {
+    headingStyle: string;
+}
+
+const { headingStyle } = Astro.props
+---
+
+<section class="bg-background shadow-[inset_0_8px_12px_-4px_rgba(0,0,0,0.08)]">
+    <div class="p-8 mx-auto max-w-screen-2xl sm:px-8">
+        <h2 class={headingStyle}>Volunteer</h2>
+        <a> 
+            Some of my roles and opportunities in Organizations and dfifferent Projects!
+        </a>
+        
+        <!-- Divider with shadow -->
+        <div class="mt-4 mb-8 h-px from-transparent via-secondary shadow-md"></div>
+        
+        <VolunteerCard/>
+    </div>
+</section>
