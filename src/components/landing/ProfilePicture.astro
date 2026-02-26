@@ -1,6 +1,6 @@
 ---
 import { Picture } from "astro:assets";
-import profilePic from "@/images/headshot.jpg"
+import profilePic from "@/images/headshot.png"
 ---
 
 <div
@@ -8,7 +8,7 @@ import profilePic from "@/images/headshot.jpg"
 >
     <!-- Place holder for pfp -->
     <Picture
-        formats={["avif", "webp", "png", "jpg"]}
+        formats={["avif", "webp", "png"]}
         inferSize={true}
         src={profilePic}
         title="Profile picture"
