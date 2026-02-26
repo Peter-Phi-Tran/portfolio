@@ -1,15 +1,18 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
+import profilePic from "@/images/headshot.jpg"
 ---
 
 <div
     class={`aspect-square size-full flex-none overflow-hidden rounded-full border-accent shadow-[0_20px_50px_rgba(0,0,0,0.5)]`}
 >
     <!-- Place holder for pfp -->
-    <Image
-        src="https://rustacean.net/assets/corro.svg"
+    <Picture
+        formats={["avif", "webp", "png", "jpg"]}
         inferSize={true}
-        alt="Profile picture"
+        src={profilePic}
+        title="Profile picture"
+        alt="looksmaxing photo"
         class="h-full object-cover object-center"
     />
 </div>
